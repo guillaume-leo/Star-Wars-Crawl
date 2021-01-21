@@ -1,25 +1,108 @@
-
-
-
 body{
-	background-color:black;
-}
-
-.main{
-	background-image:url("https://wallpapercave.com/wp/wp2917445.jpg");
-	width:100%;
-	height:100vh;
-	background-repeat:no-repeat;
-	background-size:cover;
 	margin:0px;
-	padding:0px;
-	text-align:center;
+	font-family: "Open Sans";
+	overflow: hidden;
+	color: rgb(224, 172, 0);
+}
+.main{
+	position: absolute;
+	top:0%;
+	width:100%;
+	height:100%;
+	margin-left:0px;
+	padding-left:0px;
+	background-color: black;
 }
 
-.intro{
-	color:blue;
+
+
+.layer0{
+	z-index: 4;
+	font-size: 50px;
+	opacity: 0;
+	animation-name: timeAgo;
+	animation-duration: 6s;
 }
 
-p{
-	color:white;
+@keyframes timeAgo{
+	0%	{opacity: 0;}
+	20%	{opacity: 1;}
+	80% {opacity: 1;}
+	100%{opacity: 0;}
+}
+
+.layer0 p{
+	color: rgb(6, 144, 168);
+	font-weight: 500;
+	padding: 20% 10%;
+
+}
+
+.layer1{
+	z-index: 3;
+	font-size: 50px;
+	opacity: 0;
+	animation-name: blackScreen;
+	animation-duration: 6s;	
+}
+
+
+
+@keyframes blackScreen{
+	0%	{opacity: 1;}
+	99.9% {opacity: 1;}
+	100%{opacity: 0;}
+}
+
+
+.layer2{
+	z-index: 5;
+	background-color: rgba(0, 0, 0, 0);
+	font-family: 'News Cycle', sans-serif;
+	width:60%;
+	font-size: 50px;
+	font-weight: 900;
+	margin:auto;
+	position:relative;
+	transform: perspective(500px) rotateX(40deg) translateY(400px); 
+	animation-name: crawl;
+	animation-delay: 6s;
+	animation-duration: 180s;
+	text-transform: uppercase;
+}
+
+@keyframes crawl{
+	0%	{transform: perspective(500px) rotateX(40deg) translateY(400px);}
+	100%{transform: perspective(500px) rotateX(40deg) translateY(-10000px);}
+
+}
+
+
+.layer3{
+	z-index: 1;
+	background-image: url("https://wallpaperaccess.com/full/1745055.jpg");
+	background-size: cover;
+}
+
+.logo{
+	z-index: 2;
+	background-color: rgba(0, 0, 0, 0);
+	font-family: 'News Cycle', sans-serif;
+	width:50%;
+	padding-left: 25%;
+	margin:auto;
+	position:relative;
+	transform: perspective(500px) translateZ(-100000px);
+	animation-name: logo;
+	animation-delay: 6s;
+	animation-duration: 10s;
+	opacity: 1.0;
+}
+
+@keyframes logo{
+	0%	{transform: perspective(500px)  translateZ(100px);}
+	50%	{transform: perspective(500px)  translateZ(-300px);}
+	90%	{opacity:1.0;}
+	100%{transform: perspective(500px)  translateZ(-10000px); opacity:0.0;}
+
 }
